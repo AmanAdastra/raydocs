@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ay)cxa&5b%vg)e(n10&aqhoflvlhtl%7@9&2zibc!wo_+tyk!f
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['raysterdocs.herokuapp.com','127.0.0.1']
 
 
 # Application definition
