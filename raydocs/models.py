@@ -4,3 +4,7 @@ from django.db import models
 class MyIdea(models.Model):
     name = models.CharField(max_length=100)
     idea = models.TextField()
+    
+
+class TotalVisit(models.Model):
+    count = models.IntegerField()
