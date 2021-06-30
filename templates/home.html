@@ -9,12 +9,13 @@
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
-
+  <link rel="stylesheet" href="{% static 'style.css' %}">
   <title>Rayster Docs</title>
 </head>
 
 <body>
   <div class="container-fluid">
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
     <div class="row bg-dark p-5">
       <h1 class="bg-dark text-white text-center pb-2"> <span class="fs-2"> RaysterDocs <small class="text-muted" style="font-size: 10px;">Idea's at the end of page</small> </span> </h1>
       <form action="{% url 'home' %}" method="POST">
@@ -31,7 +32,32 @@
           <button class="btn btn-light">Add My Idea</button>
         </div>
       </form>
+    </div>
+    <div class="row">
+      <div class="col" style="height:200px;overflow-y:auto">
+        <table class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col-1">S.NO</th>
+              <th scope="col-8">Idea</th>
+              <th scope="col-3">Instagram</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for idea in allidea %}
+            <tr>
+              <th >{{idea.id}}</th>
+              <td>{{idea.idea}}</td>
+              <td>{{idea.name}}</td>
+            </tr>
+            {% endfor %}
+            
+          </tbody>
+        </table>
+      </div>
     </div>    
+    <br>
+    <h1 class="fs-1 text-center text-muted">Current Status</h1>
     <div class="row">
       <div class="col-sm-3 border p-2">
         <h1>#Model View</h1>
@@ -43,9 +69,9 @@
             <p class="card-text">Aim: Get in the eye of Investors by showing your Model/Concept/Project</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Completed:</li>
-            <li class="list-group-item">Current:</li>
-            <li class="list-group-item">Future Plan:</li>
+            <li class="list-group-item">Completed: Core Concept</li>
+            <li class="list-group-item">Current: User Interface</li>
+            <li class="list-group-item">Future Plan: Collabraton Button</li>
           </ul>
           
         </div>
@@ -60,9 +86,9 @@
             <p class="card-text">Aim: Get Aware of the Current tech events</p>
           </div>
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Completed:</li>
-            <li class="list-group-item">Current:</li>
-            <li class="list-group-item">Future Plan:</li>
+            <li class="list-group-item">Completed: Core Concept</li>
+            <li class="list-group-item">Current: User Interface</li>
+            <li class="list-group-item">Future Plan: Google Meet and Markdown Integration</li>
           </ul>
           
         </div>
@@ -77,9 +103,9 @@
           <p class="card-text">Aim: You can put your not in use stuff (your juniors can buy it)</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Completed:</li>
-          <li class="list-group-item">Current:</li>
-          <li class="list-group-item">Future Plan:</li>
+          <li class="list-group-item">Completed: Core Concept</li>
+          <li class="list-group-item">Current: User Interface</li>
+          <li class="list-group-item">Future Plan: Send money using QR Code</li>
         </ul>
         
       </div></div>
@@ -93,9 +119,9 @@
           <p class="card-text">Personal View</p>
         </div>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">Completed:</li>
-          <li class="list-group-item">Current:</li>
-          <li class="list-group-item">Future Plan:</li>
+          <li class="list-group-item">Completed:Core Concept</li>
+          <li class="list-group-item">Current:Multiply Reputation</li>
+          <li class="list-group-item">Future Plan:According to your Ideas</li>
         </ul>
         
       </div></div>
@@ -103,33 +129,13 @@
     </div>
   </div>
   <hr>
-  <div class="row">
-    <div class="col">
-      <table class="table table-hover">
-        <thead>
-          <tr>
-            <th scope="col-1">S.NO</th>
-            <th scope="col-8">Idea</th>
-            <th scope="col-3">Instagram</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for idea in allidea %}
-          <tr>
-            <th >{{idea.id}}</th>
-            <td>{{idea.idea}}</td>
-            <td>{{idea.name}}</td>
-          </tr>
-          {% endfor %}
-          
-        </tbody>
-      </table>
-    </div>
-  </div>
+
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
     crossorigin="anonymous"></script>
+    <script src="{% static 'script.js' %}"></script>
+
 </body>
 
 </html>
