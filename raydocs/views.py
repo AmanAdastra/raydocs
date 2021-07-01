@@ -6,7 +6,7 @@ def home(request):
     if len(i)==0:i=0
     else :i=i.last().count
     TotalVisit(count=i+1).save()
-    allidea = MyIdea.objects.all()
+    allidea = MyIdea.objects.all()[::-1]
     if request.method=='POST':
         name = request.POST.get('instaid','unknown')
         idea = request.POST.get('idea','unknown')
